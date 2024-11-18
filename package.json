@@ -1,0 +1,88 @@
+{
+  "$schema": "https://enconvo.com/schemas/extension.json",
+  "name": "frequent_search_sites",
+  "version": "0.0.1",
+  "description": "Use internet browsing to get real time information from frequent search sites.",
+  "title": "Frequent Search Sites",
+  "icon": "icon.png",
+  "author": "EnconvoAI",
+  "categories": [
+    "Search"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "commands": [
+    {
+      "name": "github",
+      "title": "Search GitHub",
+      "description": "Use internet browsing to get real time information from GitHub.",
+      "icon": "github.png",
+      "mode": "no-view",
+      "targetCommand": "internet_browsing|search",
+      "aiPlugin": true,
+      "preferences": [
+        {
+          "name": "include_domains",
+          "description": "Only search the specified domains. Separate multiple domains with a comma.",
+          "type": "textfield",
+          "required": false,
+          "title": "Specify search source website",
+          "default": "github.com",
+          "visibility": "hidden"
+        }
+      ]
+    },
+    {
+      "name": "news",
+      "title": "Search News",
+      "description": "Use internet browsing to get real time information from news sites.",
+      "icon": "news.png",
+      "mode": "no-view",
+      "targetCommand": "internet_browsing|search",
+      "aiPlugin": true,
+      "preferences": [
+        {
+          "name": "topic",
+          "description": "［Optional］ Select the search topic. This will optimize the search for the selected topic with tailored and curated information. Select General to ignore.",
+          "type": "dropdown",
+          "required": false,
+          "title": "Specify search topic",
+          "default": "news",
+          "visibility": "hidden",
+          "data": [
+            {
+              "title": "General",
+              "value": "general"
+            },
+            {
+              "title": "News",
+              "value": "news"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "dependencies": {
+    "@enconvo/api": "^0.1.125",
+    "@langchain/core": "^0.1.58",
+    "langchain": "^0.1.33"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.31",
+    "@types/react": "18.2.27",
+    "eslint": "^8.57.0",
+    "prettier": "^2.8.8",
+    "tsup": "^7.2.0",
+    "typescript": "^5.4.5"
+  },
+  "scripts": {
+    "lint": "eslint src",
+    "lint:fix": "npm run lint --fix",
+    "format": "prettier --write \"**/*.ts\"",
+    "format:check": "prettier --list-different \"**/*.ts\"",
+    "build": "enconvo",
+    "dev": "enconvo --dev"
+  },
+  "minAppVersion": "1.8.8"
+}
