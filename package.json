@@ -64,17 +64,15 @@
     }
   ],
   "dependencies": {
-    "@enconvo/api": "^0.1.125",
-    "@langchain/core": "^0.1.58",
-    "langchain": "^0.1.33"
+    "@enconvo/api": "^0.1.149"
   },
   "devDependencies": {
-    "@types/node": "^18.19.31",
-    "@types/react": "18.2.27",
-    "eslint": "^8.57.0",
-    "prettier": "^2.8.8",
-    "tsup": "^7.2.0",
-    "typescript": "^5.4.5"
+    "@types/node": "^22.10.2",
+    "@types/react": "19.0.1",
+    "eslint": "^9.17.0",
+    "prettier": "^3.4.2",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
   },
   "scripts": {
     "lint": "eslint src",
